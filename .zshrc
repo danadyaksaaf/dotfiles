@@ -112,16 +112,43 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+alias zsh-clear-history="rm $HOME/.zsh_history"
 alias zshconfig="vim ~/.zshrc"
 alias tmuxconf="vim ~/.tmux.conf"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias fastfetchconf="vim ~/.config/fastfetch/config.jsonc"
 alias ls="lsd"
+alias zshsource="source $HOME/.zshrc"
+alias show-clock="tty-clock -c"
+
+# PACKAGE MANAGEMENT ALIASES
+alias nl="nala"
+alias nl-update="sudo nala update"
+alias nl-add="sudo nala install"
+alias nl-rm="sudo nala purge"
+alias nl-autorm="sudo nala autoremove"
+alias nl-cache="sudo apt autoclean"
+alias nl-upgrade="sudo nala upgrade"
+alias nl-list-upgrade="nala list --upgradeable"
+alias nl-find="nala search"
+
+alias repo-clean="sudo apt clean"
+
+alias pkg="dpkg"
+alias pkg-add="sudo dpkg -i"
+alias pkg-reconfigure="sudo dpkg --configure"
+
+# SYSTEM ALIASES
+alias grubconfig="sudo vim /etc/default/grub"
+alias grub-refresh="sudo update-grub"
+alias sysctl="sudo systemctl"
+alias kernel="uname -sr"
 
 # PATHS
-export PATH=$PATH:/snap/bin
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH="$HOME/flutter/bin:$PATH"
+
 
 #print some last login
 echo -n "Last login: "
